@@ -61,7 +61,7 @@ public class TestaApp {
 		t2.add(r1.toString().equals(saidaEsperada));							//testa toString
 		
 		//testes classes Impressão e Livraria
-		saidaEsperada="exemplar: R0| Data impressao: 05/08/2021\n"+saidaEsperada; //troque pela data de hoje
+		saidaEsperada="exemplar: R0| Data impressao: 26/03/2024\n"+saidaEsperada; //troque pela data de hoje
 		Livraria ccb = new Livraria("Chimas and Code books");
 		Impressao revista1 = new Impressao(r1);
 		t3.add(revista1.getCodigo().equals("R0"));

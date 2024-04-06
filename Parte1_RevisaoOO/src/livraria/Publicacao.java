@@ -7,6 +7,7 @@ public abstract class Publicacao {
 	private final LocalDate data;
 	
 	public Publicacao (String titulo,LocalDate data) {
+		if(data==null) throw new NullPointerException("data nao deve ser nula");
 		this.data = data;
 		this.titulo = titulo;
 	}

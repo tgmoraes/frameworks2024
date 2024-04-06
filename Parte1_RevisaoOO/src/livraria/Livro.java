@@ -8,6 +8,7 @@ public class Livro extends Publicacao{
 	
 	public Livro(String titulo, LocalDate d, int paginas,String...autores) {
 		super(titulo,d);
+		if(paginas<1) throw new LivrariaException("paginas do livro deve ser positivo");
 		this.paginas=paginas;
 		this.autores = autores;
 	}
@@ -22,7 +23,8 @@ public class Livro extends Publicacao{
 		String authors = "Autores: ";
 		for (String autor:this.autores) authors+=autor+", ";
 		authors = authors.substring(0, authors.length()-2);
-		return  this.getClass().getSimpleName()+": "+this.getTitulo()
+		return  super.toString()
+				//this.getClass().getSimpleName()+": "+this.getTitulo()
 				+" ("+this.getData().getYear()+") - "+
 				this.getPaginas()+" paginas - "+	authors;
 	}
@@ -33,7 +35,7 @@ public class Livro extends Publicacao{
 		//se a referência é a mesma então igual (é reflexivo)
 		if(this==o) return true;
 		
-		//cast do object para Pessoa
+		//cast do object para Livro
 		Livro par = (Livro)o;
 		if(this.autores.length != par.autores.length) return false;
 		for(int i=0;i<this.autores.length;i++) {

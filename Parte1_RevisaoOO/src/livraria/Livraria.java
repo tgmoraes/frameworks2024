@@ -14,15 +14,18 @@ public class Livraria {
 		return this.nome;
 	}
 	public void addEstoque(Publicacao pub, int qtde) {
+		if(qtde<1) throw new LivrariaException("qtde adicionada deve ser positivo");
 		while(qtde>0) {
-			estoque.add(new Impressao(pub));
+			this.addEstoque(pub);
 			qtde--;
 		}
 	}
 	public void addEstoque(Publicacao pub) {
+		if(pub == null) throw new LivrariaException("publicacao nao pode ser nula");
 		estoque.add(new Impressao(pub));
 	}
 	public Impressao vende(Publicacao pub) {
+		if(pub == null) throw new LivrariaException("publicacao nao pode ser nula");
 		Impressao ret = null;
 		for(int i=0; i< estoque.size();i++) {
 			Impressao item= estoque.get(i);

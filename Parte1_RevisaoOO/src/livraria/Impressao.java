@@ -10,6 +10,7 @@ public class Impressao {
 	private static int qtdeimpressoes=0;
 	private final LocalDate data;
 	public Impressao(Publicacao pub) {
+		if(pub == null) throw new LivrariaException("Impressao nao pode ser de uma publicacao nula");
 		this.publicacao = pub;
 		data = LocalDate.now();
 		this.cod = String.format("%c%d", 
