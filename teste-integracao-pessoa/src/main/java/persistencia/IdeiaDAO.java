@@ -11,7 +11,7 @@ import java.util.List;
 import model.Ideia;
 import model.Pessoa;
 
-public class IdeiaDAO extends DAO<Ideia> {
+public class IdeiaDAO extends DaoJdbc<Ideia> {
 	public IdeiaDAO(Connection con) {
 		super(con);
 	}

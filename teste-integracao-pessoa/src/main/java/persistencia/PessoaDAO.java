@@ -9,7 +9,7 @@ import java.util.List;
 
 import model.Pessoa;
 
-public class PessoaDAO extends DAO<Pessoa>{
+public class PessoaDAO extends DaoJdbc<Pessoa>{
 	
 	public PessoaDAO(Connection con) {
 		super(con);

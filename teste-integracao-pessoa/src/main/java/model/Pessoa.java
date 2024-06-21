@@ -1,11 +1,27 @@
 package model;
 import java.time.LocalDate;
 
+import javax.persistence.Column;
+import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.Id;
+import javax.persistence.Table;
+
+@Entity
+@Table(name="pessoas")
 public class Pessoa {
+	@Column(name="nome", nullable= false, unique=true, length=200) 
 	private String nome;
+	
+	@Id
+    @GeneratedValue
 	private Integer id;
+	
 	private LocalDate dataNascimento;
 
+	public Pessoa() {
+		
+	}
 	public Pessoa(String nome, LocalDate dataNascimento) {
 		super();
 		this.nome = nome;
